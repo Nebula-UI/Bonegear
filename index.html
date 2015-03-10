@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Bonegear v0.0.0</title>
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap-theme.css">
+</head>
+<body>
+	<button id="btn-1">Open Alert</button>
+	<div id="alert-container"></div>
+
+	<script type="text/javascript" src="libs/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="node_modules/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="node_modules/backbone/backbone-min.js"></script>
+	<script type="text/javascript" src="libs/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="src/bonegear.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#btn-1").click(function(e) {
+			var modal = new $.fn.bonegear.AlertView({
+				title: "<strong>Hello World</strong> Welcome to the world of Backbone.js"
+			});
+			modal.render();
+			});
+		});
+	</script>
+</body>
+</html>
