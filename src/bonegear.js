@@ -22,7 +22,11 @@
 	 */
 	Bonegear.AlertView = Backbone.View.extend({
 		defaults: {
-			title: "<strong>Hello World</strong>"
+			tbody: "(Default) <strong>Well done!</strong> You successfully read this important alert message.",
+			elref: "body",
+			type: "alert-success",
+			dismiss: "true",
+			dismissbody: "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"
 		},
 
 		initialize: function(options) {
@@ -32,18 +36,32 @@
 			_.extend(this, _.pick(options, _.keys(this.defaults)));
 		},
 
-		className: "alert alert-warning",
+		className: "alert alert-dismissible",
 
-		template: _.template("<%=title%>"),
+		template: _.template("<%=tbody%>"),
 
 		render: function() {
 			var data = this.model ? this.model.toJSON() : {};
-			var view = this;
+			
 			this.$el.html(this.template({
-				title: _.template(this.title)(data)
+				tbody: _.template(this.tbody)(data),
+				elref: _.template(this.elref)(data),
+				type: _.template(this.type)(data),
+				dismiss: _.template(this.dismiss)(data)
 			}));
 
-			$("#alert-container").html(this.$el);
+			(this.type) ? this.$el.addClass(this.type): this.$el.addClass(this.defaults.type);
+
+			if (this.dismiss === "true") {
+				this.$el.prepend(this.defaults.dismissbody);
+				this.$el.addClass("alert-dismissible");
+			} else {
+				if (this.$el.hasClass("alert-dismissible")) {
+					this.$el.removeClass("alert-dismissible");
+				}
+			}
+
+			$(this.elref).html(this.$el);
 
 			return this;
 		}
