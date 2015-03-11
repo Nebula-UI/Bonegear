@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Bonegear - Notification</title>
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap-theme.css">
+	<style>
+		body {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
+<body>	
+	<div class="notify-default-container"></div>
+	<div class="notify-bottom-right-container"></div>
+
+
+	<script type="text/javascript" src="../../libs/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../../libs/underscore-min.js"></script>
+	<script type="text/javascript" src="../../libs/backbone-min.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../src/bonegear.js"></script>
+	<script>
+		$(document).ready(function() {
+			var TPL_ALERT_SUCCESS = "<strong>Well done!</strong> You successfully read this important alert message.";
+
+			var notifyDefault = new $.fn.bonegear.NotifyView({
+				elref: ".notify-default-container"
+			});
+			notifyDefault.render();
+
+			var notifyBottomRight = new $.fn.bonegear.NotifyView({
+				elref: ".notify-bottom-right-container",
+				nposition: "bottom-right",
+				tbody: TPL_ALERT_SUCCESS
+			});
+			notifyBottomRight.render();
+			
+		});
+	</script>
+</body>
+</html>
