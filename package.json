@@ -23,10 +23,6 @@
     "wiki": {
         "url": "https://github.com/hegdeashwin/Bonegear/wiki"
     },
-    "dependencies": {
-        "backbone": "~1.1.2",
-        "underscore": "~1.6.0"
-    },
     "keywords": [
         "backbone.js",
         "backbone.js-ui",
