@@ -1,0 +1,50 @@
+{
+    "name": "Bonegear",
+    "version": "0.0.0",
+    "author": "Ashwin Hegde",
+    "description": "Bonegear is an open source Twitter Bootstrap 3^ UI components for your Backbone.js projects.",
+    "contributors": [{
+        "name": "Ashwin Hegde",
+        "email": "ashwin.hegde3@gmail.com"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hegdeashwin/Bonegear"
+    },
+    "issues": {
+        "url": "https://github.com/hegdeashwin/Bonegear/issues?state=open"
+    },
+    "milestones": {
+        "url": "https://github.com/hegdeashwin/Bonegear/issues/milestones"
+    },
+    "releases": {
+        "url": "https://github.com/hegdeashwin/Bonegear/releases"
+    },
+    "wiki": {
+        "url": "https://github.com/hegdeashwin/Bonegear/wiki"
+    },
+    "dependencies": {
+        "backbone": "~1.1.2",
+        "underscore": "~1.6.0"
+    },
+    "keywords": [
+        "backbone.js",
+        "backbone.js-ui",
+        "backbone-ui-components",
+        "ui-components",
+        "javascript",
+        "jquery",
+        "framework",
+        "web",
+        "rest",
+        "restful",
+        "architecture"
+    ],
+    "engines": {
+        "node": ">=0.10"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://raw.github.com/hegdeashwin/Bonegear/master/LICENSE"
+    }]
+}
