@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Bonegear - Alert</title>
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/bootstrap/css/bootstrap-theme.css">
+	<style>
+		body {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="alert-default-container"></div>
+				<div class="alert-success-container"></div>
+				<div class="alert-info-container"></div>
+				<div class="alert-warning-container"></div>
+				<div class="alert-danger-container"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../../libs/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../../libs/underscore-min.js"></script>
+	<script type="text/javascript" src="../../libs/backbone-min.js"></script>
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../src/bonegear.js"></script>
+	<script>
+		$(document).ready(function() {
+			var TPL_ALERT_SUCCESS = "<strong>Well done!</strong> You successfully read this important alert message.",
+				TPL_ALERT_INFO = "<strong>Heads up!</strong> This alert needs your attention, but it's not super important.",
+				TPL_ALERT_WARNING = "<strong>Warning!</strong> Better check yourself, you're not looking too good.",
+				TPL_ALERT_DANGER = "<strong>Oh snap!</strong> Change a few things up and try submitting again.";
+
+			var alertDefault = new $.fn.bonegear.AlertView({
+				elref: ".alert-default-container"
+			});
+			alertDefault.render();
+
+			var alertSuccess = new $.fn.bonegear.AlertView({
+				tbody: TPL_ALERT_SUCCESS,
+				elref: ".alert-success-container",
+				type: "alert-success",
+				dismiss: "true"
+			});
+			alertSuccess.render();
+
+			var alertInfo = new $.fn.bonegear.AlertView({
+				tbody: TPL_ALERT_INFO,
+				elref: ".alert-info-container",
+				type: "alert-info",
+				dismiss: "false"
+			});
+			alertInfo.render();
+
+			var TPL_ALERT_DISMISS = "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&otimes;</span></button>";
+			var alertWarning = new $.fn.bonegear.AlertView({
+				tbody: TPL_ALERT_WARNING,
+				elref: ".alert-warning-container",
+				type: "alert-warning",
+				dismissbody: TPL_ALERT_DISMISS
+			});
+			alertWarning.render();
+
+			var alertDanger = new $.fn.bonegear.AlertView({
+				tbody: TPL_ALERT_DANGER,
+				elref: ".alert-danger-container",
+				type: "alert-danger",
+				dismiss: "true"
+			});
+			alertDanger.render();
+
+		});
+	</script>
+</body>
+</html>
