@@ -18,7 +18,7 @@
 	};
 
 	/**
-	 * Bonegear Modal View
+	 * Bonegear Alert View
 	 */
 	Bonegear.AlertView = Backbone.View.extend({
 		defaults: {
