@@ -59,10 +59,12 @@
 			});
 			alertInfo.render();
 
+			var TPL_ALERT_DISMISS = "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&otimes;</span></button>";
 			var alertWarning = new $.fn.bonegear.AlertView({
 				tbody: TPL_ALERT_WARNING,
 				elref: ".alert-warning-container",
-				type: "alert-warning"
+				type: "alert-warning",
+				dismissbody: TPL_ALERT_DISMISS
 			});
 			alertWarning.render();
 

@@ -23,7 +23,7 @@
 	Bonegear.AlertView = Backbone.View.extend({
 		defaults: {
 			tbody: "(Default) <strong>Well done!</strong> You successfully read this important alert message.",
-			elref: "body",
+			elref: "div",
 			type: "alert-success",
 			dismiss: "true",
 			dismissbody: "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"
@@ -42,18 +42,23 @@
 
 		render: function() {
 			var data = this.model ? this.model.toJSON() : {};
-			
+
 			this.$el.html(this.template({
 				tbody: _.template(this.tbody)(data),
 				elref: _.template(this.elref)(data),
 				type: _.template(this.type)(data),
-				dismiss: _.template(this.dismiss)(data)
+				dismiss: _.template(this.dismiss)(data),
+				dismissbody: _.template(this.dismissbody)(data)
 			}));
 
 			(this.type) ? this.$el.addClass(this.type): this.$el.addClass(this.defaults.type);
 
 			if (this.dismiss === "true") {
-				this.$el.prepend(this.defaults.dismissbody);
+				if (this.dismissbody) {
+					this.$el.prepend(this.dismissbody);
+				} else {
+					this.$el.prepend(this.defaults.dismissbody);
+				}
 				this.$el.addClass("alert-dismissible");
 			} else {
 				if (this.$el.hasClass("alert-dismissible")) {
