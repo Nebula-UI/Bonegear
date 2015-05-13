@@ -1,0 +1,44 @@
+{
+	"name": "bonegear",
+	"main": "src/bonegear.js",
+	"version": "0.0.0",
+	"homepage": "https://github.com/hegdeashwin/Bonegear",
+	"authors": [
+		"hegdeashwin <ashwin.hegde3@gmail.com>"
+	],
+	"dependencies": {
+		"jquery": "~2.1.3",
+		"underscore": "~1.8.2",
+		"backbone": "~1.1.2",
+		"bootstrap": "3.1.0"
+	},
+	"moduleType": [
+		"amd",
+		"node"
+	],
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"keywords": [
+		"backbone",
+		"plugin",
+		"backboneplugin",
+		"backbone.js",
+        "backbone.js-ui",
+        "backbone-ui-components",
+        "ui-components",
+        "javascript",
+        "jquery",
+        "framework",
+        "web",
+        "rest",
+        "restful",
+        "architecture"
+	]
+}
