@@ -27,14 +27,10 @@
         "backbone.js",
         "backbone.js-ui",
         "backbone-ui-components",
-        "ui-components",
-        "javascript",
-        "jquery",
-        "framework",
-        "web",
-        "rest",
-        "restful",
-        "architecture"
+        "backboneplugin",
+        "backbone-plugin",
+        "backbone-ui-plugin",
+        "ui-components"
     ],
     "engines": {
         "node": ">=0.10"
